@@ -1,3 +1,6 @@
+//d:
+//cd GitHub\Nodejs\server
+//node server.js 1>../log/log.txt 2>../log/err.txt
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
