@@ -1,6 +1,6 @@
 //d:
 //cd GitHub\Nodejs\server
-//node server.js 1>../log/log.txt 2>../log/err.txt
+//node server.js 1>./log/log.txt 2>./log/err.txt
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
@@ -11,11 +11,11 @@ var server = http.createServer(function (request, response){
 	console.log(request.headers);
 	var filePath;
 	if(request.url == '/'){
-		filePath = 'client/index.html';
+		filePath = '/index.html';
 	}else{
-		filePath = 'client' + request.url;
+		filePath = request.url;
 	}
-	var absPath = '../' + filePath;
+	var absPath = '..' + filePath;
 	serveStaticFile(response, cache, absPath);
 });
 server.listen(3000);
