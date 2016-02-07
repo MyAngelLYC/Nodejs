@@ -19,6 +19,8 @@ var server = http.createServer(function (request, response){
 	serveStaticFile(response, cache, absPath);
 });
 server.listen(3000);
+var chatServer = require('./chat_server');
+chatServer.listen(server);
 
 function serveStaticFile(response, cache, absPath){
 	if(cache[absPath]){
